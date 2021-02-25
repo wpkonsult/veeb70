@@ -1,0 +1,134 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 13px;;
+}
+
+
+.paiskonteiner {
+background: transparent url('./pildid/Hills.png') 0% 0% no-repeat padding-box;
+width: 100%;
+height: 778px;
+padding-top: 30px;
+}
+
+.menyyriba .logo {
+    display: flex;
+}
+
+.klubilogo {
+    width: 90px;
+    height: 90px;
+	margin-top: -10px;
+	margin-left: -10px;
+}
+
+.klubinimi {
+	font-size: 33px;
+	line-height: 35px;
+	font-weight: 800;
+	font-family: 'Montserrat', sans-serif;
+    max-width: 126px;
+    text-transform: uppercase;
+}
+
+.menyyriba .menyy {
+    font-family: 'Montserrat', sans-serif;
+	font-size: 16.67px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2.67px;
+}
+
+.menyyriba .menyy ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.menyyriba .menyy li {
+    padding: 0px;
+    margin-left: 10px;
+    min-width: 100px;
+}
+
+.pealkirjad {
+    padding-top: 231px;
+    text-transform: uppercase;
+    color: #0B0B0B;
+    letter-spacing: 0px;
+    font-weight: 800;
+}
+
+.pealkirjad h2 {
+    font-size: 39.57px;
+    font-weight: 700;
+}
+
+.pealkirjad h1 {
+    font-size: 65px;
+    font-weight: 800;
+}
+
+.pealkirjad h3 {
+    font-size: 20.83px;
+    font-weight: 700;
+}
+
+.liblikas1 {
+    height: 66px;
+    display: block;
+    margin-top: -40px;
+}
+
+.liblikas2 {
+    height: 32px;
+    width: 60px;
+    display: block;
+    margin-bottom: 40px;
+    margin-left: -62px;
+}
+
+.pealispilt {
+    overflow: hidden;
+}
+
+.pealispilt .matkaja {
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -400px;
+}
+
+.pealispilt .vari {
+    width: 1087px;
+    height: 87px;
+    margin-top: -37px;
+    margin-left: -178px;
+}
+
+.nupp-paises {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 2.25px;
+    font-size: 12px;
+    line-height: 46px;
+    padding-left: 22px;
+    padding-right: 22px;
+    border-radius: 0px;
+    color: white;
+    background-color: black;
+    margin-top: 20px;
+}
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 95%;
+    }
+}
+
+@media screen and (min-width: 1480px) {
+    .paiskonteiner {
+        background: transparent url('./pildid/Hills@2x.png') 50% 50% no-repeat padding-box;
+    }
+}
