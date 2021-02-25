@@ -50,6 +50,10 @@ padding-top: 30px;
     min-width: 100px;
 }
 
+.menyy a {
+    color: #0B0B0B;
+}
+
 .pealkirjad {
     padding-top: 231px;
     text-transform: uppercase;
