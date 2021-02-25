@@ -47,7 +47,21 @@
         </div>
 
     </div>
-
+    <div class="container">
+        <h1>Matkade andmed</h1>
+        <div class="row">
+        <% for (let i = 0; i < koikMatkad.length; i++) {%>
+          <div class="card col-6 col-md-4 col-lg-3">
+            <img class="card-img-top" src="<%= koikMatkad[i].pilt %>" alt="Card image">
+            <div class="card-body">
+            <h4 class="card-title"><%= koikMatkad[i].nimi %></h4>
+            <p class="card-text"><%= koikMatkad[i].kirjeldus %></p>
+            <a href="#" class="btn btn-primary">Registreeru</a>
+            </div>
+        </div> 
+        <% } %>
+      </div>
+    </div>
 </body>
 
 </html>
