@@ -76,7 +76,11 @@ function lisaMatkaja(req, res) {
 }
 
 function matkaleRegistreerunud(req, res) {
-  res.send('mitte midagi')
+  const matkaIndeks = req.params.matk
+  if ( matkaIndeks < 0 || matkaIndeks >= koikMatkad.length) {
+    return res.send({error: 'Matka indeks ' + matkaIndeks + ' ei ole õige'});
+  }
+  return res.send(koikMatkad[matkaIndeks]);
 }
 
 express()
@@ -90,5 +94,5 @@ express()
   .get('/registreerimine/:matk', matkaleRegistreerumine)
   .get('/testnumber/:number', millineParameeter)
   .get('/lisaMatkaja', lisaMatkaja)
-  .get('/matkajad/:matk', matkaleRegistreerunud)
+  .get('/api/matkajad/:matk', matkaleRegistreerunud)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
