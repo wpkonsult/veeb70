@@ -55,15 +55,24 @@ function lisaMatkaja(req, res) {
     email: req.query.email,
   }
 
-  const matkaIndeks = req.query.matk
+  const matkaIndeks = parseInt(req.query.matk)
+
+  if ( matkaIndeks < 0 || matkaIndeks >= koikMatkad.length) {
+    return res.send(`Viga: matka indeks ${matkaIndeks} on vigane`);
+  }
+  
 
   const valitudMatk = koikMatkad[matkaIndeks]
   valitudMatk.registreerunud.push(registreerunu)
-
+  
   console.log('Lisatud matkaja:')
   console.log(valitudMatk)
+
+  return res.render(
+    'pages/kinnitus', 
+    { matk: valitudMatk, isikNimi: registreerunu.nimi }
+  );
   
-  res.send('Matk: ' + req.query.matk + ' email: ' + req.query.email)
 }
 
 express()
