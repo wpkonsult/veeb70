@@ -75,6 +75,10 @@ function lisaMatkaja(req, res) {
   
 }
 
+function matkaleRegistreerunud(req, res) {
+  res.send('mitte midagi')
+}
+
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
@@ -86,4 +90,5 @@ express()
   .get('/registreerimine/:matk', matkaleRegistreerumine)
   .get('/testnumber/:number', millineParameeter)
   .get('/lisaMatkaja', lisaMatkaja)
+  .get('/matkajad/:matk', matkaleRegistreerunud)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
