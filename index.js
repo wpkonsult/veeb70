@@ -58,6 +58,7 @@ function lisaMatkaja(req, res) {
   const registreerunu = {
     nimi: req.query.nimi,
     email: req.query.email,
+    markus: req.query.markus
   }
 
   const matkaIndeks = parseInt(req.query.matk)
@@ -137,6 +138,18 @@ function matkaleRegistreerunud(req, res) {
   
 }
 
+function matkadeLoetelu(req, res) {
+  let matkadeLoetelu = koikMatkad.map(function(matk) {
+    return matk.nimi
+  })
+  //for (let i = 0; i < koikMatkad.length; i++) {
+  //  const matk = koikMatkad[i]
+  //  matkadeLoetelu.push(matk.nimi)
+  //}
+
+  return res.send(matkadeLoetelu)
+}
+
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
@@ -149,4 +162,5 @@ express()
   .get('/testnumber/:number', millineParameeter)
   .get('/lisaMatkaja', lisaMatkaja)
   .get('/api/matkajad/:matk', matkaleRegistreerunud)
+  .get('/api/matkad', matkadeLoetelu)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
